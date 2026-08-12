@@ -1,0 +1,13 @@
+# Headless core
+pandas>=2.0
+openpyxl>=3.1
+
+# Desktop GUI
+PyQt5>=5.15
+
+# Demo / test only (example_usage.py) — also the optional fallback
+# shapefile readers if the built-in raw DBF parser ever fails
+geopandas>=0.14
+shapely>=2.0
+fiona>=1.9
+matplotlib>=3.7
