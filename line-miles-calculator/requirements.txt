@@ -1,0 +1,10 @@
+# Standalone mode
+pandas>=2.0
+openpyxl>=3.1
+
+# Demo only (example_usage.py)
+matplotlib>=3.7
+numpy>=1.24
+
+# QGIS mode requires no separate install —
+# it uses the qgis.core API bundled with QGIS Desktop.
