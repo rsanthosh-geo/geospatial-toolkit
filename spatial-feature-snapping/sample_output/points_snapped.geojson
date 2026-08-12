@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "points_snapped",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "label": "near_vertex_0", "snapped": "Yes" }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_1", "snapped": "Yes" }, "geometry": { "type": "Point", "coordinates": [ 10.0, 5.0 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_2", "snapped": "Yes" }, "geometry": { "type": "Point", "coordinates": [ 20.0, 2.0 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_3", "snapped": "Yes" }, "geometry": { "type": "Point", "coordinates": [ 30.0, 8.0 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_4", "snapped": "Yes" }, "geometry": { "type": "Point", "coordinates": [ 40.0, 4.0 ] } },
+{ "type": "Feature", "properties": { "label": "far_0", "snapped": "No" }, "geometry": { "type": "Point", "coordinates": [ 15.649127619826482, 25.167401826213638 ] } },
+{ "type": "Feature", "properties": { "label": "far_1", "snapped": "No" }, "geometry": { "type": "Point", "coordinates": [ 17.225120816567113, 25.867985714381408 ] } },
+{ "type": "Feature", "properties": { "label": "far_2", "snapped": "No" }, "geometry": { "type": "Point", "coordinates": [ 29.513511491686408, 29.562672548360986 ] } }
+]
+}

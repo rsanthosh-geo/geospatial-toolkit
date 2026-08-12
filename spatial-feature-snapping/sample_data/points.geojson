@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "points",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "label": "near_vertex_0" }, "geometry": { "type": "Point", "coordinates": [ -2.486104997138254, -1.579136960423402 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_1" }, "geometry": { "type": "Point", "coordinates": [ 11.807646791238382, 5.492972216386207 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_2" }, "geometry": { "type": "Point", "coordinates": [ 17.564771853442394, 1.598761641418843 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_3" }, "geometry": { "type": "Point", "coordinates": [ 29.874307788845005, 5.958433487822472 ] } },
+{ "type": "Feature", "properties": { "label": "near_vertex_4" }, "geometry": { "type": "Point", "coordinates": [ 41.407462908455287, 1.68203211952842 ] } },
+{ "type": "Feature", "properties": { "label": "far_0" }, "geometry": { "type": "Point", "coordinates": [ 15.649127619826482, 25.167401826213638 ] } },
+{ "type": "Feature", "properties": { "label": "far_1" }, "geometry": { "type": "Point", "coordinates": [ 17.225120816567113, 25.867985714381408 ] } },
+{ "type": "Feature", "properties": { "label": "far_2" }, "geometry": { "type": "Point", "coordinates": [ 29.513511491686408, 29.562672548360986 ] } }
+]
+}
