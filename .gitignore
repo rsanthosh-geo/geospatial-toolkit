@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Large data files — never commit raw imagery/datasets directly.
+# Keep sample_data/ folders small and synthetic; link large real
+# datasets externally instead of committing them.
+*.tif.large
+*.zip
+*.7z
+
+# Jupyter
+.ipynb_checkpoints/

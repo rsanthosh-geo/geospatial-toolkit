@@ -36,17 +36,10 @@ solves, how it works, and how to run its demo yourself.
 Python · PyQGIS · GDAL / rasterio · GeoPandas / Shapely / scikit-image
 · Google Earth Engine · pandas / openpyxl · PyQt5
 
-## About
-
-Built by [Santhosh Kumar R](https://github.com/rsanthosh-geo) —
-Geospatial Analyst, AI Data Operations, working on remote sensing and
-applied ML for electrical T&D vegetation risk, biodiversity assessment,
-and climate-risk intelligence.
-
 ## License
 
 [MIT](LICENSE)
 
-## Contact
+## Author
 
-[Mail](mailto:rsanthosh.geo@gmail.com) · [LinkedIn](https://linkedin.com/in/rsanthoshgeo)
+[Santhosh Kumar R](https://github.com/rsanthosh-geo) — see [profile](https://github.com/rsanthosh-geo) for background and contact.
