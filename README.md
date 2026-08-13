@@ -1,56 +1,52 @@
-# 🌍 Santhosh Kumar R | Geospatial Automation & AI-Driven Analyst
+# Geospatial Toolkit
 
-# GIS Automation & Remote Sensing Projects 🛰️
+Five open-source geospatial automation tools, generalized from real
+production workflows in electrical T&D vegetation risk, remote sensing,
+and spatial data QC. Every tool ships with a standalone mode (no
+proprietary or company-specific dependency), a synthetic/reproducible
+demo, and an honest README about what's illustrative versus measured.
 
-Welcome to my professional portfolio of GIS models and real-world project workflows. This repository contains automation models built in QGIS and problem-driven GIS project solutions focusing on habitat mapping, tree health management, and cloud polygon image processing.
+## Tools
 
-## 🧠 What I Bring to the Table
+| Tool | What it does |
+|---|---|
+| [raster-nodata-cleanup](raster-nodata-cleanup/) | Batch NoData/white-patch removal from satellite, aerial, and drone imagery — QGIS and standalone modes |
+| [vegetation-extraction](vegetation-extraction/) | Excess Green Index vegetation-polygon extraction from RGB imagery |
+| [spatial-feature-snapping](spatial-feature-snapping/) | Point-to-line-vertex snapping with a strict 1:1 constraint |
+| [line-miles-calculator](line-miles-calculator/) | Feeder line-miles aggregation with recency-based delivery-time estimation |
+| [polygon-delta-qc-engine](polygon-delta-qc-engine/) | Shapefile delta QC — dependency-free DBF parsing, ground-truth-verified against known test data |
 
-I specialize in:
+Each folder is self-contained: read its README for the problem it
+solves, how it works, and how to run its demo yourself.
 
-- 🚀 **QGIS Model Builder Automation**: Custom-built models to eliminate repetitive tasks and reduce human error.
-- 🛰️ **Remote Sensing-Based Image Processing**: Automating downloads, buffering, and filtering of satellite images.
-- 🌿 **Ecological Mapping & Habitat Classification**: Generating AI-ready datasets with consistent attribution logic using SOP + code tables.
-- 🌳 **Tree Health & Hazard Analysis**: Detecting vegetation threats using multi-angle satellite images with QC/QA insights.
-- 🗂️ **PostGIS-Backed Workflows**: Efficient spatial database management for large-scale, multi-layer GIS operations.
+## Design principles across all five
 
+- **Standalone by default** — most tools run outside QGIS entirely
+  (pure Python: rasterio / GeoPandas / Shapely / pandas), with a QGIS
+  Processing-framework mode available where it adds real value.
+- **Every demo is runnable, not just described** — `example_usage.py`
+  in each folder generates synthetic data, runs the tool, and produces
+  the exact image or output shown in that tool's README.
+- **Honest about estimates vs. measurements** — where a tool produces
+  a planning-level heuristic (e.g. delivery-time estimates), the README
+  and code say so explicitly rather than presenting it as precise.
 
-## 📁 Structure
+## Tech stack
 
-- `models/`: Custom QGIS models for automated image downloading and cloud masking
-- `projects/`: GIS project documentation with problems tackled, workflows used, and results
-- Each folder includes a `model_description.md` or `report.md` with all technical details
+Python · PyQGIS · GDAL / rasterio · GeoPandas / Shapely / scikit-image
+· Google Earth Engine · pandas / openpyxl · PyQt5
 
-## 🔍 Included Projects & Models
+## About
 
-### 🌿 BNG Habitat Automation
-Automates the classification of habitats using models based on SOP and code tables.
+Built by [Santhosh Kumar R](https://github.com/rsanthosh-geo) —
+Geospatial Analyst, AI Data Operations, working on remote sensing and
+applied ML for electrical T&D vegetation risk, biodiversity assessment,
+and climate-risk intelligence.
 
-### 🌳 Tree Hazard Management
-Interpretation of tree health using satellite imagery and QC insights.
+## License
 
-### ☁️ Cloud Polygon Image Download
-QGIS model to auto-download and process cloud-covered imagery areas.
+[MIT](LICENSE)
 
-### 📏 Span Level Image Download
-Buffered span-level QGIS model to automate high-resolution image extraction.
+## Contact
 
-## 🛠️ Tools & Technologies
-
-| GIS Platforms           | QGIS, ArcGIS Pro, GDAL/OGR, PostGIS, Google Earth Engine, AIMS                         | 
-| Programming             | Python, PyQGIS, GeoPandas, Rasterio, Shapely, NumPy, Pandas, SQL, JavaScript           | 
-| AI and Machine Learning | SAM (Segment Anything Model), YOLOv8, TensorFlow, PyTorch, Random Forest, XGBoost      | 
-| Satellite and Imagery   | Sentinel-2, Landsat 8/9, MODIS, GSAT, Aerial (5 to 50 cm), NDVI/EVI/SAVI, OBIA         | 
-| Databases and Cloud     | PostgreSQL, AWS, Power BI                                                              | 
-| Domain Standards        | UK BNG Legislation, Defra Biodiversity Metric 4.0, UKHab Classification, OGC Standards | 
-
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-> _“Precision is not just a metric, it’s the mindset that shapes every spatial decision.”_
-
-📫 Let’s collaborate or connect! Reach me at: **rsanthosh.geo@gmail.com**  
-🌐 [LinkedIn](https://linkedin.com/in/rsanthoshgeo) | [GitHub](https://github.com/rsanthosh-geo)
-
+[Mail](mailto:rsanthosh.geo@gmail.com) · [LinkedIn](https://linkedin.com/in/rsanthoshgeo)
