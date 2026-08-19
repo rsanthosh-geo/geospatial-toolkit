@@ -1,4 +1,4 @@
-# Line Miles Calculation & Delivery-Time Estimation, by Feeder
+# Linear Network Delivery-Time Estimator, by Feeder
 
 Aggregates line-length attributes across a spatial network, grouped by
 feeder, and produces a per-feeder Excel breakdown — including an
@@ -8,7 +8,7 @@ actually requires.
 ## The problem
 
 Given a spatial network with a length attribute per feature, produce a
-per-feeder summary (total line miles, span count, customer) that a
+per-feeder summary (total linear length, span count, customer) that a
 delivery-planning conversation can actually use — including a time
 estimate, so planning isn't just "here's the length" but "here's roughly
 how long this will take."
@@ -35,7 +35,7 @@ Two ways to classify each feature are supported:
 
 If neither a usable category nor a parseable date is available for a
 feature, it's classified as **`Unknown`** — its length still counts
-toward the feeder's total line miles, but it is explicitly excluded
+toward the feeder's total linear length, but it is explicitly excluded
 from the time estimate and reported separately on a **Data Quality**
 sheet. The tool never guesses a category to fill a gap.
 
@@ -51,7 +51,7 @@ as well, not just here.
 ## Output
 
 A 3-sheet Excel workbook:
-- **Feeder Summary** — customer, feeder, span count, total line miles,
+- **Feeder Summary** — customer, feeder, span count, total linear length,
   per-category miles and estimated hours, Unknown miles/count
 - **Data Quality** — every feeder with Unknown-category features, so
   data gaps are visible rather than silently absorbed into a total
@@ -63,7 +63,7 @@ A 3-sheet Excel workbook:
 Synthetic 3-feeder dataset with a realistic mix of recent capture
 dates, stale ones, and some missing entirely:
 
-![Line miles by feeder and category](line_miles_demo.png)
+![linear length by feeder and category](delivery_estimate_demo.png)
 
 The gray segment is deliberately visible, not hidden — that's the
 `Unknown` data-quality gap.
@@ -72,32 +72,32 @@ The gray segment is deliberately visible, not hidden — that's the
 
 ```python
 import pandas as pd
-from line_miles_calculator import calculate_line_miles_by_feeder, export_to_excel
+from linear_network_delivery_estimator import calculate_line_miles_by_feeder, export_to_excel
 
 df = pd.read_csv("feeder_attributes.csv")
 
 results = calculate_line_miles_by_feeder(
     df,
-    length_field="length_lms",
+    length_field="segment_length",
     feeder_field="feeder",
     customer_field="customer",
     date_field="streetview_capture_date",   # or category_field=... if pre-classified
     recency_threshold_years=2,               # calibrate to your own definition of "recent"
 )
 
-export_to_excel(results, "feeder_line_miles.xlsx")
+export_to_excel(results, "feeder_delivery_estimate.xlsx")
 ```
 
 **QGIS Console mode** (reads the active layer's attribute table directly):
 ```python
-from line_miles_calculator import run_qgis_batch
+from linear_network_delivery_estimator import run_qgis_batch
 
-run_qgis_batch(date_field="streetview_capture_date", output_path="feeder_line_miles.xlsx")
+run_qgis_batch(date_field="streetview_capture_date", output_path="feeder_delivery_estimate.xlsx")
 ```
 
 **Command line:**
 ```bash
-python line_miles_calculator.py feeder_attributes.csv output.xlsx --date-field streetview_capture_date
+python linear_network_delivery_estimator.py feeder_attributes.csv output.xlsx --date-field streetview_capture_date
 ```
 
 ## Try it yourself

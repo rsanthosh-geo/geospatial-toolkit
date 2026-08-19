@@ -1,4 +1,4 @@
-feeder,customer,length_lms,streetview_capture_date
+feeder,customer,segment_length,streetview_capture_date
 FDR-101,Utility Co. A,0.2247,2023-03-27
 FDR-101,Utility Co. A,0.06,2026-01-06
 FDR-101,Utility Co. A,0.0746,2025-03-24

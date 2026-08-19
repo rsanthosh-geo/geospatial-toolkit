@@ -1,0 +1,4 @@
+geopandas>=0.14
+
+# QGIS mode requires no separate install —
+# it uses the qgis.core API bundled with QGIS Desktop.

@@ -1,5 +1,5 @@
 """
-Line Miles Calculation & Delivery-Time Estimation, by Feeder
+linear length Calculation & Delivery-Time Estimation, by Feeder
 ------------------------------------------------------------
 Aggregates line-length attributes across a spatial network, grouped by
 feeder, and produces a per-feeder Excel breakdown — including an
@@ -30,7 +30,7 @@ Honesty about missing data
 ---------------------------
 If neither a usable category value nor a parseable date is available
 for a feature, it is classified as "Unknown" — its length still counts
-toward the feeder's total line miles, but it is excluded from the
+toward the feeder's total linear length, but it is excluded from the
 time estimate and reported separately as a data-quality gap. The tool
 never guesses a category to fill in missing data.
 
@@ -122,7 +122,7 @@ def classify_by_recency(capture_date, reference_date=None,
 
 def calculate_line_miles_by_feeder(
     df,
-    length_field="length_lms",
+    length_field="segment_length",
     feeder_field="feeder",
     customer_field=None,
     category_field=None,
@@ -133,7 +133,7 @@ def calculate_line_miles_by_feeder(
     reference_date=None,
 ):
     """
-    Aggregate line miles by feeder and validation category.
+    Aggregate linear length by feeder and validation category.
 
     Parameters
     ----------
@@ -160,7 +160,7 @@ def calculate_line_miles_by_feeder(
         {category_label: minutes_per_mile}. Defaults to
         DEFAULT_TIME_ESTIMATES_MIN_PER_MILE. Categories not present in
         this dict (including "Unknown") are excluded from time
-        estimates but still counted in total line miles.
+        estimates but still counted in total linear length.
     reference_date : date, optional
         "Today", for testing/reproducibility.
 
@@ -256,7 +256,7 @@ def export_to_excel(results, output_path, time_estimates_min_per_mile=None):
     ws = wb.active
     ws.title = "Feeder Summary"
 
-    headers = (["Customer", "Feeder", "Span Count", "Total Line Miles"]
+    headers = (["Customer", "Feeder", "Span Count", "Total linear length"]
                + [f"{c} (miles)" for c in all_categories]
                + [f"{c} (est. hrs)" for c in all_categories]
                + ["Unknown (miles)", "Unknown Count"])
@@ -291,7 +291,7 @@ def export_to_excel(results, output_path, time_estimates_min_per_mile=None):
 
     # Data-quality sheet
     dq = wb.create_sheet("Data Quality")
-    dq.append(["Feeder", "Unknown-category Span Count", "Unknown-category Line Miles"])
+    dq.append(["Feeder", "Unknown-category Span Count", "Unknown-category linear length"])
     for cell in dq[1]:
         cell.font = Font(bold=True)
     any_unknown = False
@@ -307,8 +307,8 @@ def export_to_excel(results, output_path, time_estimates_min_per_mile=None):
     meta = wb.create_sheet("Metadata")
     meta.append(["Generated on:", datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
     meta.append(["Feeders:", len(results)])
-    meta.append(["Total line miles:", round(grand_totals["miles"], 4)])
-    meta.append(["Unknown-category line miles:", round(grand_totals["unknown_miles"], 4)])
+    meta.append(["Total linear length:", round(grand_totals["miles"], 4)])
+    meta.append(["Unknown-category linear length:", round(grand_totals["unknown_miles"], 4)])
     meta.append([""])
     meta.append(["Time-estimate rates (minutes/mile) — illustrative, calibrate from your own data:"])
     for cat, rate in time_estimates.items():
@@ -320,7 +320,7 @@ def export_to_excel(results, output_path, time_estimates_min_per_mile=None):
 
 
 def run_qgis_batch(
-    length_field="length_lms",
+    length_field="segment_length",
     feeder_field=None,
     customer_field=None,
     category_field=None,
@@ -383,10 +383,10 @@ def run_qgis_batch(
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Calculate line miles by feeder with recency-based delivery-time estimation.")
+    parser = argparse.ArgumentParser(description="Calculate linear length by feeder with recency-based delivery-time estimation.")
     parser.add_argument("input_csv", help="CSV/Excel attribute table with length, feeder, and date/category columns")
     parser.add_argument("output_xlsx", help="Output Excel path")
-    parser.add_argument("--length-field", default="length_lms")
+    parser.add_argument("--length-field", default="segment_length")
     parser.add_argument("--feeder-field", default="feeder")
     parser.add_argument("--customer-field", default=None)
     parser.add_argument("--category-field", default=None)

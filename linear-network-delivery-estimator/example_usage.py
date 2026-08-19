@@ -9,7 +9,7 @@ import numpy as np
 from datetime import date, timedelta
 import matplotlib.pyplot as plt
 
-from line_miles_calculator import calculate_line_miles_by_feeder, export_to_excel, UNKNOWN_LABEL
+from linear_network_delivery_estimator import calculate_line_miles_by_feeder, export_to_excel, UNKNOWN_LABEL
 
 TODAY = date(2026, 8, 13)
 
@@ -41,7 +41,7 @@ def make_synthetic_dataset(seed=11):
             rows.append({
                 "feeder": feeder,
                 "customer": customers[feeder],
-                "length_lms": round(length, 4),
+                "segment_length": round(length, 4),
                 "streetview_capture_date": capture_date.isoformat() if capture_date else None,
             })
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     results = calculate_line_miles_by_feeder(
         df,
-        length_field="length_lms",
+        length_field="segment_length",
         feeder_field="feeder",
         customer_field="customer",
         date_field="streetview_capture_date",
@@ -63,9 +63,9 @@ if __name__ == "__main__":
         reference_date=TODAY,
     )
 
-    export_to_excel(results, "sample_output/feeder_line_miles.xlsx")
+    export_to_excel(results, "sample_output/feeder_delivery_estimate.xlsx")
 
-    # Visual summary: stacked bar of line miles per feeder, by category
+    # Visual summary: stacked bar of linear length per feeder, by category
     categories = sorted({c for d in results.values() for c in d["lengths"]})
     feeders = sorted(results.keys())
 
@@ -78,12 +78,12 @@ if __name__ == "__main__":
         ax.bar(feeders, values, bottom=bottom, label=cat, color=colors.get(cat, "gray"))
         bottom += np.array(values)
 
-    ax.set_ylabel("Line miles")
-    ax.set_title("Line miles by feeder and validation category")
+    ax.set_ylabel("linear length")
+    ax.set_title("linear length by feeder and validation category")
     ax.legend()
     plt.tight_layout()
-    plt.savefig("line_miles_demo.png", dpi=150)
-    print("\nSaved demo image: line_miles_demo.png")
+    plt.savefig("delivery_estimate_demo.png", dpi=150)
+    print("\nSaved demo image: delivery_estimate_demo.png")
 
     # Print a quick summary to prove the Unknown-handling logic works
     for f in feeders:
