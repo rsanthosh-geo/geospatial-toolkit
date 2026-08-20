@@ -1,6 +1,6 @@
 # Geospatial Toolkit
 
-Five open-source geospatial automation tools, generalized from real
+Open-source geospatial automation tools, generalized from real
 production workflows in electrical T&D vegetation risk, remote sensing,
 and spatial data QC. Every tool ships with a standalone mode (no
 proprietary or company-specific dependency), a synthetic/reproducible

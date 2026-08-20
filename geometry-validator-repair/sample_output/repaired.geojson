@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "repaired",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "bowtie", "source_group": "test_geometries" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -0.003, 10.0 ], [ 5.003, 5.0 ], [ 0.0, -0.003 ], [ -0.003, 0.0 ], [ -0.003, 10.0 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "dup_vertices", "source_group": "test_geometries" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 19.997, 0.0 ], [ 19.997878679656441, 10.00212132034356 ], [ 30.002121320343559, 10.00212132034356 ], [ 30.002121320343559, -0.00212132034356 ], [ 19.997, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "clean", "source_group": "test_geometries" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 39.997, 0.0 ], [ 39.997878679656438, 10.00212132034356 ], [ 50.002121320343562, 10.00212132034356 ], [ 50.002121320343562, -0.00212132034356 ], [ 39.997, 0.0 ] ] ] } }
+]
+}

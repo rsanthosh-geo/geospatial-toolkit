@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "test_geometries",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "bowtie" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 0.0, 0.0 ], [ 10.0, 10.0 ], [ 10.0, 0.0 ], [ 0.0, 10.0 ], [ 0.0, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "dup_vertices" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 20.0, 0.0 ], [ 20.0000001, 0.0 ], [ 30.0, 0.0 ], [ 30.0, 10.0 ], [ 20.0, 10.0 ], [ 20.0, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "clean" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 40.0, 0.0 ], [ 50.0, 0.0 ], [ 50.0, 10.0 ], [ 40.0, 10.0 ], [ 40.0, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "sliver" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 60.0, 0.0 ], [ 60.001, 0.0 ], [ 60.001, 10.0 ], [ 60.0, 10.0 ], [ 60.0, 0.0 ] ] ] } }
+]
+}

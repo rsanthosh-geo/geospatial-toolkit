@@ -1,0 +1,8 @@
+shapely>=2.0
+geopandas>=0.14
+
+# Demo only
+matplotlib>=3.7
+
+# QGIS mode requires no separate install —
+# it uses the qgis.core API bundled with QGIS Desktop.
