@@ -1,0 +1,10 @@
+rasterio>=1.3
+geopandas>=0.14
+shapely>=2.0
+
+# Demo only
+numpy>=1.24
+matplotlib>=3.7
+
+# QGIS mode requires no separate install —
+# it uses the qgis.core / GDAL API bundled with QGIS Desktop.
