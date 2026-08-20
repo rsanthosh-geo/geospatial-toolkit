@@ -13,13 +13,17 @@ demo, and an honest README about what's illustrative versus measured.
 | [raster-nodata-cleanup](raster-nodata-cleanup/) | Batch NoData/white-patch removal from satellite, aerial, and drone imagery — QGIS and standalone modes |
 | [vegetation-extraction](vegetation-extraction/) | Excess Green Index vegetation-polygon extraction from RGB imagery |
 | [spatial-feature-snapping](spatial-feature-snapping/) | Point-to-line-vertex snapping with a strict 1:1 constraint |
-| [line-miles-calculator](line-miles-calculator/) | Feeder line-miles aggregation with recency-based delivery-time estimation |
+| [linear-network-delivery-estimator](linear-network-delivery-estimator/) | Network length aggregation with recency-based delivery-time estimation |
 | [polygon-delta-qc-engine](polygon-delta-qc-engine/) | Shapefile delta QC — dependency-free DBF parsing, ground-truth-verified against known test data |
+| [spatial-dataset-splitter](spatial-dataset-splitter/) | Splits a merged spatial dataset into one file per group, any geometry type |
+| [geometry-validator-repair](geometry-validator-repair/) | Detects and repairs invalid polygon geometry — self-intersections, slivers, duplicate vertices |
+| [imagery-tile-prioritizer](imagery-tile-prioritizer/) | Tile footprint indexing with overlap-priority ranking (recency or vendor order) |
+| [geometric-drift-qc](geometric-drift-qc/) | Flags features with significant positional/angular drift between raw and corrected versions |
 
 Each folder is self-contained: read its README for the problem it
 solves, how it works, and how to run its demo yourself.
 
-## Design principles across all five
+## Design principles across every tool here
 
 - **Standalone by default** — most tools run outside QGIS entirely
   (pure Python: rasterio / GeoPandas / Shapely / pandas), with a QGIS

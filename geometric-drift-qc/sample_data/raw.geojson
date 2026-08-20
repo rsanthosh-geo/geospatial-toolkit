@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "raw",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "feature_id": "L1" }, "geometry": { "type": "LineString", "coordinates": [ [ 0.0, 0.0 ], [ 10.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L2" }, "geometry": { "type": "LineString", "coordinates": [ [ 20.0, 0.0 ], [ 30.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L3" }, "geometry": { "type": "LineString", "coordinates": [ [ 40.0, 0.0 ], [ 50.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P1" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 0.0, 20.0 ], [ 10.0, 20.0 ], [ 10.0, 30.0 ], [ 0.0, 30.0 ], [ 0.0, 20.0 ] ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P2" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 20.0, 20.0 ], [ 30.0, 20.0 ], [ 30.0, 30.0 ], [ 20.0, 30.0 ], [ 20.0, 20.0 ] ] ] } }
+]
+}

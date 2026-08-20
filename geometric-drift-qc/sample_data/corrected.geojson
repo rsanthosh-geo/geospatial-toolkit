@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "corrected",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "feature_id": "L1" }, "geometry": { "type": "LineString", "coordinates": [ [ 0.0, 0.0 ], [ 10.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L2" }, "geometry": { "type": "LineString", "coordinates": [ [ 21.006852326227129, 0.738320218785281 ], [ 30.993147673772867, 1.261679781214719 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L3" }, "geometry": { "type": "LineString", "coordinates": [ [ 48.468461064816751, 5.886908691296505 ], [ 57.531538935183249, 10.113091308703499 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P1" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 0.0, 20.0 ], [ 10.0, 20.0 ], [ 10.0, 30.0 ], [ 0.0, 30.0 ], [ 0.0, 20.0 ] ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P2" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 32.0, 32.0 ], [ 42.0, 32.0 ], [ 42.0, 42.0 ], [ 32.0, 42.0 ], [ 32.0, 32.0 ] ] ] } }
+]
+}

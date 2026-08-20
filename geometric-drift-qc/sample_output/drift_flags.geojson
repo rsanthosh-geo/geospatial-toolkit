@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "drift_flags",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "feature_id": "L1", "geom_type": "LineString", "distance_shift": 0.0, "angle_change_deg": 0.0, "flagged": false }, "geometry": { "type": "LineString", "coordinates": [ [ 0.0, 0.0 ], [ 10.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L2", "geom_type": "LineString", "distance_shift": 1.2485, "angle_change_deg": 3.0, "flagged": false }, "geometry": { "type": "LineString", "coordinates": [ [ 21.006852326227129, 0.738320218785281 ], [ 30.993147673772867, 1.261679781214719 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "L3", "geom_type": "LineString", "distance_shift": 10.3136, "angle_change_deg": 25.0, "flagged": true }, "geometry": { "type": "LineString", "coordinates": [ [ 48.468461064816751, 5.886908691296505 ], [ 57.531538935183249, 10.113091308703499 ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P1", "geom_type": "Polygon", "distance_shift": 0.0, "angle_change_deg": 0.0, "flagged": false }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 0.0, 20.0 ], [ 10.0, 20.0 ], [ 10.0, 30.0 ], [ 0.0, 30.0 ], [ 0.0, 20.0 ] ] ] } },
+{ "type": "Feature", "properties": { "feature_id": "P2", "geom_type": "Polygon", "distance_shift": 16.9706, "angle_change_deg": 0.0, "flagged": true }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 32.0, 32.0 ], [ 42.0, 32.0 ], [ 42.0, 42.0 ], [ 32.0, 42.0 ], [ 32.0, 32.0 ] ] ] } }
+]
+}
