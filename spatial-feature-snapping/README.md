@@ -16,7 +16,7 @@ force-snaps a point that's genuinely unrelated to the network) and a
 1:1 constraint (so two points never collapse onto the same vertex).
 
 Originally built for aligning utility poles onto a conductor-line
-network — a common electrical T&D data-cleanup task — but the technique
+network — a common utility data-cleanup task — but the technique
 itself is generic: address points to road-centerline nodes, sensor
 locations to pipeline junctions, or any point layer that needs to
 conflate onto an existing line network's vertices.

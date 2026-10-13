@@ -49,8 +49,8 @@ solves, how it works, and how to run its demo yourself.
 
 ## Tech stack
 
-Python · PyQGIS · GDAL / rasterio · GeoPandas / Shapely / scikit-image
-· Google Earth Engine · pandas / openpyxl · PyQt5
+Python · GDAL / rasterio · GeoPandas / Shapely / scikit-image
+· Google Earth Engine · pandas / openpyxl · PyQt5 · PyQGIS (optional QGIS-console modes)
 
 ## License
 
